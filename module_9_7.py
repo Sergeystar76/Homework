@@ -1,5 +1,5 @@
-def decorator(func):
-    def wapper(*args):
+def is_prime(func):
+    def wrapper(*args):
         result = func(*args)
         for j in range(2, result):
             if result % j != 0:
@@ -8,9 +8,9 @@ def decorator(func):
                 print('Составное')
             break
         return result
-    return wapper
+    return wrapper
 
-@decorator
+@is_prime
 def sum_three(*args):
     summa = sum(args)
     return summa
