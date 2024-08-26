@@ -18,8 +18,8 @@ def read_info(name):
 
 
 if __name__ == '__main__':
+    start = datetime.datetime.now()
     with multiprocessing.Pool(processes=4) as pool:
-        start = datetime.datetime.now()
         pool.map(read_info, files)
     end = datetime.datetime.now()
     print(f'{end - start} (многопроцессный)')
